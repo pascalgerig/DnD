@@ -1,0 +1,514 @@
+\documentclass[letterpaper,openany,oneside,twocolumn]{book}
+
+\newcommand{\PATH}{../../}
+
+\usepackage{\PATH templates/utilities/m4rz-fonts}
+\usepackage{\PATH templates/utilities/m4rz-colors}
+
+\usepackage[justified]{\PATH templates/template_dnd/dnd}
+
+\usepackage[edition=5e24]{\PATH templates/template_character-sheet/character-sheet-stylesheet}
+\usepackage{\PATH templates/template_magic-item/magic-items_commands}
+
+\setlength\oddsidemargin{\dimexpr(\paperwidth-\textwidth)/2 - 1in\relax}
+\setlength\evensidemargin{\oddsidemargin}
+
+% CHARACTER STATS
+\CharacterName{Archibald "Archie" MacCraeg}
+
+\Class{Wizard}
+\MultiClassMainLevel{}
+\MultiClass{}
+\Subclass{School of Evocationn}
+\Background{Noble}
+\Race{Human}
+
+\Level{1}
+
+% ABILITY SCORES
+% (correct scores, no modifiers are automatically applied)
+% Modifiers, Saving Throws and Skills are calculated automatically
+\StrengthRolledScore{9}
+\DexterityRolledScore{13}
+\ConstitutionRolledScore{14}
+\IntelligenceRolledScore{14}
+\WisdomRolledScore{14}
+\CharismaRolledScore{10}
+
+\StrengthScoreBonus{0}
+\DexterityScoreBonus{0}
+\ConstitutionScoreBonus{0}
+\IntelligenceScoreBonus{2} % Noble Background
+\WisdomScoreBonus{0}
+\CharismaScoreBonus{1} % Noble Background
+
+\calculateAbilityScores{}
+
+% PROFICIENCIES AND EXPERTIES {P, E}
+%% SAVING THROWS
+\StrengthProficiency{}
+\DexterityProficiency{}
+\ConstitutionProficiency{}
+\IntelligenceProficiency{P}
+\WisdomProficiency{P}
+\CharismaProficiency{}
+
+%% STRENGTH SKILLS
+\AthleticsProficiency{}
+
+%% DEXTERITY SKILLS
+\AcrobaticsProficiency{}
+\SleightOfHandProficiency{}
+\StealthProficiency{}
+
+%% INTELLIGENCE SKILLS
+\ArcanaProficiency{P}
+\HistoryProficiency{P}
+\InvestigationProficiency{P}
+\NatureProficiency{}
+\ReligionProficiency{}
+
+%% WISDOM SKILLS
+\AnimalHandlingProficiency{P}
+\InsightProficiency{}
+\MedicineProficiency{}
+\PerceptionProficiency{P}
+\SurvivalProficiency{}
+
+%% CHARISMA SKILLS
+\DeceptionProficiency{}
+\IntimidationProficiency{}
+\PerformanceProficiency{}
+\PersuasionProficiency{P}
+
+% ABILITY MODIFIERS BONUS
+\StrengthModifierBonus{0}
+\DexterityModifierBonus{0}
+\ConstitutionModifierBonus{0}
+\IntelligenceModifierBonus{0}
+\WisdomModifierBonus{0}
+\CharismaModifierBonus{0}
+
+\Inspiration{}
+\PassivePerceptionModifier{0}
+
+%\EquipShield
+\ArmorClass{\intcalcAdd{10}{\calculateModifier{\DexterityScoreValue}}}
+
+\MaxHitPointsRolled{6} % Without Constitution Bonus, is added automatically
+\CurrentHitPoints{\MaxHitPointsValue}
+\TemporaryHitPoints{}
+\HitDice{d6}
+\MultiClassHitDice{}
+\HitDiceSpent{0}
+\MultiClassHitDiceSpent{}
+
+\InitiativeModifier{\ProficiencyValue}
+\Speed{30}
+\Size{Medium}
+
+\LightArmor{}
+\MediumArmor{}
+\HeavyArmor{}
+\Shields{}
+
+\WeaponsProficiency{Simple Weapons}
+\ToolsProficiency{Calligrapher's Supplies, Forgery Kit, Gaming Set (Playing Cards)}
+
+% WEAPONS & DAMAGE CANTRIPS
+% \addWeaponStatistic{#1}{#2}{#3}{#4}{#5}{#6}{#7}
+% #1: Weapon-Name, #2: Handle, #3: Skill, #4: P, #5: Bonus-Modifier, #6: Damage, #7: Additional Information
+\addWeaponStatistic{Quarterstaff}{Baesi}{STR}{P}{0}{1d6 b}{versatile (1d8)}
+\addWeaponStatistic{Dagger}{Baesi}{STR}{P}{0}{1d6 s}{thrown, light}
+\addWeaponStatistic{Unarmed Strike}{Baesi}{STR}{P}{0}{\intcalcMax{1}{\intcalcAdd{1}{\calculateModifier{\StrengthScoreValue}}} b}{}
+% \addSpellStatistic{#1}{#2}{#3}{#4}{#5}
+% #1: Spell-Name, #2: ATK, DC, BOTH, #3: \calculateModifier{SkillScore}, #4: Damage, #5: Additional Information
+\addSpellStatistic{Fire Bolt}{ATK}{\calculateModifier{\IntelligenceScoreValue}}{1d10}{Fire}
+\addSpellStatistic{Toll the Dead}{DC}{\calculateModifier{\IntelligenceScoreValue}}{1d8}{Necrotic, 1d12 Necrotic if target misses HP}
+\addSpellStatistic{Chromatic Orb}{ATK}{\calculateModifier{\IntelligenceScoreValue}}{3d8}{Acid, Cold, Fire, Lightning, Poison, or Thunder}
+
+% E: normal bullet point, A: Action, B: Bonus Action, R: Reaction, L: Limited Uses
+\AddClassFeature{E}{\textbf{Ritual Adept}}
+\AddClassFeature{L}{\textbf{Arcane Recovery}\\Recover Spell Slots (Charges: \intcalcMax{1}{\intcalcShr{\intcalcAdd{\LevelValue}{1}}})}
+\AddClassFeature{E}{\textbf{Expanding and Replacing a Spellbook}}
+
+\AddSpeciesFeature{L}{\textbf{Resourceful}\\Gain 1 Heroic Inspiration per Long Rest}
+\AddSpeciesFeature{E}{\textbf{Skillful}\\Gain 1 Skill Proficiency (Animal Handling).}
+\AddSpeciesFeature{E}{\textbf{Versatile}\\Gain 1 Origin Feat (Alert).}
+
+\AddFeat{\textbf{Alert}}
+\AddFeat{\textbf{Skilled}}
+
+% BACKGROUND & APPEARANCE
+\Age{}
+\Height{4-7 ft.}
+\Weight{}
+\Eyes{}
+\Skin{}
+\Hair{}
+
+\CharacterAppearance{vertical} % (vertical/horizontal/none)
+	{7} % Main-Text Offset (Steps of 15.75 [equal to line-height])
+	{0} % Picture X-Shift (absolute value, no effect in vertical mode)
+	{0} % Picture Y-Shift (absolute value)
+	{images/Baesi.png} %
+	{%
+		{\ } % Text next to picture (horizonatl mode only - delete otherwise)
+		{\ } % Text beneath picture
+	}%
+\Characterbackground{
+	Born into a noble house whose influence had long since withered to academic appointments and ceremonial roles, Archie was pushed toward the clergy by his overbearing mother. But faith, he declared, was "an unreliable heuristic built on emotional supposition". Instead, he buried himself in the measurable, provable, explodable truths of arcane science.
+
+	He arrived at Broughty Castle fresh from his family's private tutors, declaring his intent to "revive the scientific dignity of applied evocation". He has since been relegated to copying scroll fragments, clearing bird nests from broken observatory lenses, and organizing magical component shelves by spectral weight.
+	
+	Yet still - he lectures. He theorizes. He believes.\\
+	Where others see moldy tomes, Archie sees raw data.\\
+	Where others mutter forgotten incantations, he constructs theoretical models.\\
+	Where others patch a ward with chicken blood and hope, he calculates the harmonic discharge window of a planar bleed.
+}
+\AlliesAndOrganizations{
+	The Courtwizards of Dundee boast a lofty title but little substance: under the sole guidance of a weary Master Arcanist, a few scrappy apprentices shuffle through a cramped, draft-riddled tower wing whose shelves sag beneath scant, dust-covered tomes. Their arcane instruments - cracked crystal orbs, warped brass athames, and tarnished wand cores - rattle with disuse, and any hope of unearthing ancient scriptures has long since withered in the absence of royal funding. While King Dundax \RoyalRoman{XIII} entrusts the Knights of Crail with the realm's true defence, the wizards eke out a modest reputation by improvising
+}{half-baked wards and scavenging forgotten rituals from tattered pages. Still, beneath peeling plaster and fading sigils, a spark of ambition remains: they dream that one day their humble order might reclaim its lost glory.}
+\OrganizationName{Courtwizards of Dundee}
+\OrganizationSymbol{images/Courtwizards_of_Dundee.png}
+\AdditionalFeaturesAndTraits{
+	\ 
+}
+\Treasure{
+	\textbf{Kinetic Resonance Theory (KRT + $\Delta t$)}\\
+	$K \ = \ \lambda (E) \ \times \ \Theta (\Psi ) \ \times \ \delta (\Delta t)$\\
+	($K$ = kinetic potential, $\lambda$ = elemental load, $E$ = energy input, $\Theta$ = spell structure, $\Psi$ = caster's harmonic attunement, $\delta (\Delta t)$ = temporal synchrony)\\\\
+	KRT + $\Delta t$ posits that evocation magic isn't wild elemental force - it's a form of resonant frequency manipulation, tuned to the metaphysical structure of matter and time. Properly applied, even a low-level spell like Fire Bolt can become devastating - if timed to a target's resonance peak.\\
+	Unfortunately, no one else in the courtwizard tower understands his diagrams. And no one else cares.
+
+}
+
+% PERSONALITY TRAITS
+\PersonalityTraits{
+	I live by a strict personal code - everything from my sleeping arrangements to the alphabetical organization of my spellbook is meticulously maintained. Chaos, in all its filthy unpredictability, is the domain of barbarians, not scholars.
+}
+\Alignment{Lawful Neutral}
+
+\Ideals{
+	\textbf{Order:} Magic, like life, should be structured and disciplined. There's elegance in precision.\\
+	\textbf{Knowledge:} Accumulating and preserving magical knowledge is the highest pursuit.
+}
+
+\Bonds{
+	My spellbook is my most prized possession. Its organization is sacred, and woe to those who smudge its pages. My professor rejected my work once - his mistake.
+}
+
+\Flaws{
+	I believe I'm the smartest person in any room - and I make sure everyone knows it. My blunt honesty often comes out at the worst possible time, sometimes sabotaging diplomacy or alliances.
+}
+
+% LANGUAGES
+\Languages{Common, Draconic, Elvish}
+
+% EQUIPMENT
+\Equipment{
+	\textbf{Spellbook (Arcane Focus)}, Fine Clothes, Perfume, Playing Cards, 2 Daggers, Quarterstaff, Robe, Calligrapher's Supplies, Forgery Kit, backpack, book of lore, ink, ink pen, lamp, 10 flasks of oil, 10 sheets of Parchment, tinderbox
+}
+
+% ATTUNEMENT SLOTS
+%\addAttunedMagicItem{}
+
+% MONEY
+\CP{}
+\SP{}
+\EP{}
+\GP{19}
+\PP{}
+
+% SPELLS
+\SpellcastingClass{Wizard}
+\SpellcastingAbility{INT} % STR, DEX, CON, INT, WIS, CHA
+\SpellSaveDCModifier{0} % any modifier that isn't contained in "8 + Ability Modifier + Proficiency Bonus"
+\SpellAttackModifier{0} % any modifier that isn't contained in "Ability Modifier + Proficiency Bonus"
+
+\FirstLevelSpellSlotsTotal{2}
+%\SecondLevelSpellSlotsTotal{}
+
+% Add Prepared Spell:
+%\addPreparedSpell{Level}
+%	{Spell-Name}
+%	{Action, Bonus Action, Reaction, 1 Min...}
+%	{Target}
+%	{T} Concentration
+%	{T} Ritual
+%	{T} Requires Material
+%	{Notes}
+%	{Spell Components (V, S, M)}
+
+\addPreparedSpell{0}
+	{Blade Ward}
+	{Action}
+	{Self}
+	{T}
+	{}
+	{}
+	{-1d4 damage taken}
+	{V, S}
+\addPreparedSpell{0}
+	{Fire Bolt}
+	{Action}
+	{120 Feet}
+	{}
+	{}
+	{}
+	{V, S}
+	{V, S}
+\addPreparedSpell{0}
+	{Toll the Dead}
+	{Action}
+	{60 Feet}
+	{}
+	{}
+	{}
+	{V, S}
+	{V, S}
+\addPreparedSpell{1}
+	{Chromatic Orb}
+	{Action}
+	{90 Feet}
+	{}
+	{}
+	{T}
+	{V, S, M}
+	{V, S, M}
+\addPreparedSpell{1}
+	{Disguise Self}
+	{Action}
+	{Self}
+	{}
+	{}
+	{}
+	{V, S, 1 Hour}
+	{V, S}
+\addPreparedSpell{1}
+	{Identify}
+	{1 Min}
+	{Self}
+	{}
+	{T}
+	{T}
+	{V, S}
+	{V, S, M}
+\addPreparedSpell{1}
+	{Mage Armor}
+	{Action}
+	{Self}
+	{}
+	{}
+	{T}
+	{Base AC 13, 8 Hours}
+	{V, S, M}
+	
+% Add not prepared Spell
+%\AddSpell
+%	{Level}
+%	{False}
+%	{Spell Name}
+%	{Spell Components}
+
+\begin{document}
+
+\newgeometry{left=0cm,right=0cm,top=0cm,bottom=0cm}
+\onecolumn
+
+
+% CHARACTER PAGE
+\rendercharactersheet
+
+% BACKSTORY PAGE
+\renderbackgroundsheet
+
+% SPELLCASTING PAGE
+\renderspellsheet
+
+% SPELLCASTING PRE5E24 PAGE
+\renderoldspellsheet
+
+
+\restoregeometry
+\twocolumn
+
+\chapter*{Features, Magic Items and Spells}
+
+\section*{Human Traits}
+\subsection*{Resourceful}
+You gain Heroic Inspiration whenever you finish a Long Rest. 
+\subsection*{Skillful}
+\textbf{Animal Handling}\\
+You gain proficiency in one skill of your choice.
+\subsection*{Versatile}
+\textbf{Alert Feat}\\
+You gain an Origin feat of your choice.
+
+\section*{Feat}
+\subsection*{Alert}
+You gain the following benefits.
+\paragraph*{Initiative Proficiency} When you roll Initiative, you can add your Proficiency Bonus to the roll.
+\paragraph*{Initiative Swap} Immediately after you roll Initiative, you can swap your Initiative with the Initiative of one willing ally in the same combat. You can't make this swap if you or the ally has the Incapacitated condition. 
+\subsection*{Skilled}
+\textbf{Calligrapher's Supplies, Forgery Kit, Perception}\\
+You gain proficiency in any combination of three skills or tools of your choice. 
+
+\section*{Wizard Traits}
+\subsection*{Ritual Adept}
+You can cast any spell as a Ritual if that spell has the Ritual tag and the spell is in your spellbook. You needn't have the spell prepared, but you must read from the book to cast a spell in this way. 
+\subsection*{Arcane Recovery}
+You have a pool of inherent magic that replenishes when you take a Long Rest. In this pool you have an amount of charges equal to half your Wizard Level (round up). You can use these charges out of combat to restore expended spell slots. Recovering a spell slot costs a number of charges equal to the spell level and none of the slots can be level 6 or higher. For example if you're a level 4 Wizard, you have 2 charges in your pool and are able to regain either one level 2 spell slot or two level 1 spell slots. 
+
+\section*{Spells}
+\subsection*{Cantrip}
+
+\DndSpellHeader
+  {Blade Ward}
+  {Abjuration Cantrip}
+  {Action}
+  {Self}
+  {V, S}
+  {Concentration, Up to 1 Minute}
+
+Whenever a creature makes an attack roll against you before the spell ends, the attacker subtracts ld4 from the attack roll.
+
+\DndSpellHeader
+  {Fire Bolt}
+  {Evocation Cantrip}
+  {Action}
+  {120 Feet}
+  {V, S}
+  {Instantaneous}
+
+You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 fire damage. A flammable object hit by this spell ignites if it isn't being worn or carried.
+
+\subparagraph*{Cantrip Upgrade} This spell's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).
+
+\DndSpellHeader
+  {Toll the Dead}
+  {Necromancy Cantrip}
+  {Action}
+  {60 Feet}
+  {V, S}
+  {Instantaneous}
+
+You point at one creature you can see within range and the single chime of a dolorous bell is audible within 10 feet of the target. The target must succeed on a Wisdom saving throw or take ld8 Necrotic damage. If the target is missing any of its Hit Points it instead takes ld12 Necrotic damage.
+
+\subparagraph*{Cantrip Upgrade} The damage increases by one die when you reach levels 5 (2d8 or 2d12), 11 (3d8 or 3d12), and 17 (4d8 or 4d12).
+
+\eject
+
+\subsection*{Level 1}
+
+\DndSpellHeader
+  {Chromatic Orb}
+  {1st-Level Evocation}
+  {Action}
+  {90 Feet}
+  {V, S, M (a diamond worth 50+ GP)}
+  {Instantaneous}
+
+You hurl an orb of energy at a target within range. Choose Acid, Cold, Fire, Lightning, Poison, or Thunder for the type of orb you create, and then make a ranged spell attack against the target. On a hit, the target takes 3d8 damage of the chosen type.
+
+If you roll the same number on two or more of the d8s, the orb leaps to a different target of your choice within 30 feet of the target. Make an attack roll against the new target, and make a new damage roll. The orb can't leap again unless you cast the spell with a level 2+ spell slot.
+
+\subparagraph*{Using a Higher-Level Spell Slot} The damage increases by ld8 for each spell slot level above 1. The orb can leap a maximum number of times equal to the level of the slot expended, and a creature can be targeted only once by each casting of this spell.
+
+\DndSpellHeader
+  {Disguise Self}
+  {1st-Level Illusion}
+  {Action}
+  {Self}
+  {V, S}
+  {1 Hour}
+
+You make yourself-including your clothing, armor, weapons, and other belongings on your person look different until the spell ends. You can seem 1 foot shorter or taller and can appear heavier or lighter. You must adopt a form that has the same basic arrangement of limbs a s you have. Otherwise, the extent of the illusion is up to you.
+
+The changes wrought by this spell fail to hold up to physical inspection. For example, if you use this spell to add a hat to your outfit, objects pass through the hat, and anyone who touches it would feel nothing. 
+
+To discern that you are disguised, a creature must take the Study action to inspect your appearance and succeed on an Intelligence (Investigation) check against your spell save DC. 
+
+\DndSpellHeader
+  {Identify}
+  {1st-Level Divination (Ritual)}
+  {1 Minute}
+  {Touch}
+  {V, S, M (a pearl worth at least 100 GP and an owl feather)}
+  {Instantaneous}
+
+You choose one object that you must touch throughout the casting of the spell. If it is a magic item or some other magic-imbued object, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any spells are affecting the item and what they are. If the item was created by a spell, you learn which spell created it.
+
+If you instead touch a creature throughout the casting, you learn what spells, if any, are currently affecting it.
+
+\DndSpellHeader
+  {Mage Armor}
+  {1st-Level Abjuration}
+  {Action}
+  {Touch}
+  {V, S, M (a piece of cured leather)}
+  {8 Hours}
+
+You touch a willing creature who isn't wearing armor. Until the spell ends, the target's base AC becomes 13 plus its Dexterity modifier. The spell ends early if the target dons armor.
+
+\vfill\eject
+
+\section*{Miscellaneous}
+\subsection*{Expanding the Spellbook}
+The spells you add to your spellbook as you gain levels reflect your ongoing magical research, but you might find other spells during your adventures that you can add to the book. You could discover a Wizard spell in a book, for example, and then copy it into your spellbook.
+\paragraph*{Copying a Spell into the Book} When you find a level 1+ Wizard spell , you can copy it into your
+spell book if it's of a level you can prepare and if you have time to copy it. For each level of the spell, the transcription takes 2 hours and costs 50 GP. Afterwards you can prepare the spell like the other spells in your spellbook.
+\paragraph*{Copying a Scroll into a Spellbook} A Wizard spell on a Spell Scroll can be copied into a spellbook. When a spell is copied in this way, the copier must succeed on an Intelligence (Arcana) Check with a DC equal to 10 plus the spell's level. On a successful check, the spell is copied. Whether the check succeeds or fails the Spell Scroll is destroyed.
+\paragraph*{Copying the Book} You can copy a spell from your spell book into another book. This is like copying a new spell into your spellbook but faster, since you already know how to cast the spell. You need spend only 1 hour and 10 GP for each level of the copied spell.
+
+If you lose your spell book, you can use the same procedure to transcribe the Wizard spells that you have prepared into a new spellbook. Filling out the remainder of the new book requires you to find new spells to do so. For this reason, many wizards keep a backup spellbook. 
+
+\vfill\eject
+
+\subsection*{Attack and Damage Rolls}
+\subsubsection*{Melee Weapons}
+\paragraph*{Attack Roll}\hfill\\
+\underline{\textit{Dagger (Throwable):}}\\
+1d20 + STR-Modifier + Proficiency Modifier\\
+\indent Current Max (melee): \intcalcAdd{20}{\intcalcAdd{\calculateModifier{\StrengthScoreValue}}{\ProficiencyValue}}\\
+\indent Current Max (thrown): \intcalcAdd{20}{\intcalcAdd{\calculateModifier{\StrengthScoreValue}}{\ProficiencyValue}}
+\\
+\underline{\textit{Quarterstaff (Versatile):}}\\
+1d20 + STR-Modifier + Proficiency Modifier\\
+\indent Current Max: \intcalcAdd{20}{\intcalcAdd{\calculateModifier{\StrengthScoreValue}}{\ProficiencyValue}}
+\paragraph*{Damage Roll}\hfill\\
+\underline{\textit{Dagger (Throwable):}}\\
+1d4 + STR-Modifier\\
+\indent Current Max (melee): \intcalcAdd{4}{\calculateModifier{\StrengthScoreValue}}\\
+\indent Current Max (thrown): \intcalcAdd{4}{\calculateModifier{\StrengthScoreValue}}
+\\
+\underline{\textit{Quarterstaff (Versatile):}}\\
+1d6 (1d8) + STR-Modifier\\
+\indent Current Max (one-handed): \intcalcAdd{6}{\calculateModifier{\StrengthScoreValue}}\\
+\indent Current Max (two-handed): \intcalcAdd{8}{\calculateModifier{\StrengthScoreValue}}
+\subsubsection*{Special Attacks}
+\paragraph*{Attack Roll}\hfill\\
+\underline{\textit{Unarmed Strike:}}\\
+1d20 + STR-Modifier + Proficiency Modifier\\
+\indent Current Max: \intcalcAdd{20}{\intcalcAdd{\calculateModifier{\StrengthScoreValue}}{\ProficiencyValue}}
+\paragraph*{Damage Roll}\hfill\\
+\underline{\textit{Unarmed Strike:}}\\
+1 + STR-Modifier (min. 1)\\
+\indent Current Max: \intcalcMax{1}{\intcalcAdd{1}{\calculateModifier{\StrengthScoreValue}}}
+
+\vfill\eject
+
+\subsection*{The Kingdom of Fife}
+\subsubsection*{History}
+{\entryfont\paragraph*{Founding of Dundee} In the dawn of the Common Era, the legendary hero Dundax strode forth from the mist-shrouded moors of eastern Caledonia. Guided by visions of a greater destiny, he chose the fertile, winding banks of the River Tay as the cradle of his new realm. There, amidst ancient standing stones and roaming elk, Dundax raised the first ramparts of Dundee, proclaiming it the capital of the newly born Kingdom of Fife. Under his wise rule, Dundee blossomed from a simple settlement into a beacon of artifice and valour, its timber-framed halls echoing with festivals in honour of the river's spirits.
+\paragraph*{The Great Eagle War} Over seven centuries later, the realm trembled beneath the thunder of war. In 743 AD, the bitter feud between the rival principalities of Angus and Fyfdonia erupted into the cataclysm known as the Great Eagle War. Eagle-standarded banners blotted out the sky, and sorcerers of both sides summoned lightning from storm-clouds to rain devastation upon villages and hamlets. Countless innocents perished in the crossfire of ambition. Yet when all seemed lost, a radiant manifestation of cosmic justice - an immense, winged seraph of pure light - soared above the battlefield. Its clarion cry rallied the weary soldiers to lay down arms and unite under a single banner. Thus was born the unified Kingdom of Fife, with Dundee - formerly within the borders of Angus - enthroned as its enduring capital. Under this new era, the people of Fife swore an oath of harmony, forging bonds of steel and spirit that would withstand the ages.}
+
+\vfill\eject
+
+\subsubsection*{Members}
+{\entryfont\paragraph*{King Dundax \RoyalRoman{XIII}} King Dundax \RoyalRoman{XIII}, sovereign of Fife's storied throne, rules with a steady hand and a vision of lasting harmony. Deeply committed to the welfare of his realm, he has fostered alliances across the land and now places his hopes on his son's union with Iona McDougall - believing their marriage to the Grandmaster of Crail's daughter will bind two great houses and secure a peace that endures through the ages.}\\
+{\entryfont\paragraph*{Ser Proletius} Ser Proletius, true son of Crail's ramparts, was born, raised, and trained within its stone walls. Celebrated for his keen tactical mind and versatile mastery of arms, his strength of body and will is legendary. Whether he inherited his title or seized it through sheer merit remains unknown, but none doubt his fitness to lead Crail's knights.}\\
+{\entryfont\paragraph*{Prince Angus McFife} Angus McFife I, eldest son of King Dundax \RoyalRoman{XIII} and heir to the throne of Fife, is beloved for his gentle spirit. Fiercely protective of his people and his pet ape, Bobo, he's known to pause royal processions to aid injured animals and share humble meals with commoners, his kindness outshining any crown.}\\
+{\entryfont\paragraph*{Iona McDougall} Iona McDougall, daughter of Ser Proletius, combines elven grace - her silver hair and emerald eyes - with a warm, just heart. Betrothed to Angus McFife I, her kindness and fairness already mend disputes and uplift the humble, promising a reign of harmony beside her future king.}
+
+\end{document}
