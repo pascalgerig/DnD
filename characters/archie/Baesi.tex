@@ -19,11 +19,11 @@
 \Class{Wizard}
 \MultiClassMainLevel{}
 \MultiClass{}
-\Subclass{School of Evocationn}
+\Subclass{School of Evocation}
 \Background{Noble}
 \Race{Human}
 
-\Level{1}
+\Level{3}
 
 % ABILITY SCORES
 % (correct scores, no modifiers are automatically applied)
@@ -62,7 +62,7 @@
 \StealthProficiency{}
 
 %% INTELLIGENCE SKILLS
-\ArcanaProficiency{P}
+\ArcanaProficiency{E}
 \HistoryProficiency{P}
 \InvestigationProficiency{P}
 \NatureProficiency{}
@@ -95,7 +95,7 @@
 %\EquipShield
 \ArmorClass{\intcalcAdd{10}{\calculateModifier{\DexterityScoreValue}}}
 
-\MaxHitPointsRolled{6} % Without Constitution Bonus, is added automatically
+\MaxHitPointsRolled{11} % Without Constitution Bonus, is added automatically
 \CurrentHitPoints{\MaxHitPointsValue}
 \TemporaryHitPoints{}
 \HitDice{d6}
@@ -121,16 +121,17 @@
 \addWeaponStatistic{Quarterstaff}{Baesi}{STR}{P}{0}{1d6 b}{versatile (1d8)}
 \addWeaponStatistic{Dagger}{Baesi}{STR}{P}{0}{1d6 s}{thrown, light}
 \addWeaponStatistic{Unarmed Strike}{Baesi}{STR}{P}{0}{\intcalcMax{1}{\intcalcAdd{1}{\calculateModifier{\StrengthScoreValue}}} b}{}
+
 % \addSpellStatistic{#1}{#2}{#3}{#4}{#5}
 % #1: Spell-Name, #2: ATK, DC, BOTH, #3: \calculateModifier{SkillScore}, #4: Damage, #5: Additional Information
 \addSpellStatistic{Fire Bolt}{ATK}{\calculateModifier{\IntelligenceScoreValue}}{1d10}{Fire}
 \addSpellStatistic{Toll the Dead}{DC}{\calculateModifier{\IntelligenceScoreValue}}{1d8}{Necrotic, 1d12 Necrotic if target misses HP}
-\addSpellStatistic{Chromatic Orb}{ATK}{\calculateModifier{\IntelligenceScoreValue}}{3d8}{Acid, Cold, Fire, Lightning, Poison, or Thunder}
 
 % E: normal bullet point, A: Action, B: Bonus Action, R: Reaction, L: Limited Uses
 \AddClassFeature{E}{\textbf{Ritual Adept}}
 \AddClassFeature{L}{\textbf{Arcane Recovery}\\Recover Spell Slots (Charges: \intcalcMax{1}{\intcalcShr{\intcalcAdd{\LevelValue}{1}}})}
 \AddClassFeature{E}{\textbf{Expanding and Replacing a Spellbook}}
+\AddClassFeature{E}{\textbf{Potent Cantrip} \\Half Damage on Miss with Cantrip}
 
 \AddSpeciesFeature{L}{\textbf{Resourceful}\\Gain 1 Heroic Inspiration per Long Rest}
 \AddSpeciesFeature{E}{\textbf{Skillful}\\Gain 1 Skill Proficiency (Animal Handling).}
@@ -208,16 +209,17 @@
 % EQUIPMENT
 \Equipment{
 	\textbf{Spellbook (Arcane Focus)}, Fine Clothes, Perfume, Playing Cards, 2 Daggers, Quarterstaff, Robe, Calligrapher's Supplies, Forgery Kit, backpack, book of lore, ink, ink pen, lamp, 10 flasks of oil, 10 sheets of Parchment, tinderbox
+	\textbf{mystery item}, Box of Candles (2 GP), 2x Find Familiar Stuff, Book "On the History of Master Arcanists"
 }
 
 % ATTUNEMENT SLOTS
 %\addAttunedMagicItem{}
 
 % MONEY
-\CP{}
-\SP{}
+\CP{5}
+\SP{1}
 \EP{}
-\GP{19}
+\GP{10}
 \PP{}
 
 % SPELLS
@@ -226,8 +228,8 @@
 \SpellSaveDCModifier{0} % any modifier that isn't contained in "8 + Ability Modifier + Proficiency Bonus"
 \SpellAttackModifier{0} % any modifier that isn't contained in "Ability Modifier + Proficiency Bonus"
 
-\FirstLevelSpellSlotsTotal{2}
-%\SecondLevelSpellSlotsTotal{}
+\FirstLevelSpellSlotsTotal{4}
+\SecondLevelSpellSlotsTotal{2}
 
 % Add Prepared Spell:
 %\addPreparedSpell{Level}
@@ -247,7 +249,7 @@
 	{T}
 	{}
 	{}
-	{-1d4 damage taken}
+	{-1d4 attack roll}
 	{V, S}
 \addPreparedSpell{0}
 	{Fire Bolt}
@@ -268,31 +270,13 @@
 	{V, S}
 	{V, S}
 \addPreparedSpell{1}
-	{Chromatic Orb}
+	{Jim's Magic Missile}
 	{Action}
-	{90 Feet}
+	{120 Feet}
 	{}
 	{}
 	{T}
 	{V, S, M}
-	{V, S, M}
-\addPreparedSpell{1}
-	{Disguise Self}
-	{Action}
-	{Self}
-	{}
-	{}
-	{}
-	{V, S, 1 Hour}
-	{V, S}
-\addPreparedSpell{1}
-	{Identify}
-	{1 Min}
-	{Self}
-	{}
-	{T}
-	{T}
-	{V, S}
 	{V, S, M}
 \addPreparedSpell{1}
 	{Mage Armor}
@@ -303,6 +287,42 @@
 	{T}
 	{Base AC 13, 8 Hours}
 	{V, S, M}
+\addPreparedSpell{1}
+	{Shield}
+	{Reaction}
+	{Self}
+	{}
+	{}
+	{}
+	{+5 AC, 1 Round}
+	{V, S}
+\addPreparedSpell{2}
+	{Suggestion}
+	{Action}
+	{30 Feet}
+	{T}
+	{}
+	{T}
+	{V, S, M}
+	{V, S, M}
+\addPreparedSpell{2}
+	{Aganazzar's Scorcher}
+	{Action}
+	{30 Feet}
+	{}
+	{}
+	{T}
+	{V, S, M}
+	{V, S, M}
+\addPreparedSpell{2}
+	{Snilloc's Snowball Swarm}
+	{Action}
+	{90 Feet}
+	{}
+	{}
+	{T}
+	{V, S, M}
+	{V, S, M}
 	
 % Add not prepared Spell
 %\AddSpell
@@ -310,6 +330,27 @@
 %	{False}
 %	{Spell Name}
 %	{Spell Components}
+\AddSpell{1}
+	{False}
+	{Find Familiar}
+	{Ritual, V, S, M}
+\AddSpell{1}
+	{False}
+	{Identify}
+	{Ritual, V, S, M}
+\AddSpell{1}
+	{False}
+	{Chromatic Orb}
+	{V, S, M}
+\AddSpell{1}
+	{False}
+	{Disguise Self}
+	{V, S}
+\AddSpell{1}
+	{False}
+	{Alarm}
+	{Ritual, V, S, M}
+
 
 \begin{document}
 
@@ -333,7 +374,7 @@
 \restoregeometry
 \twocolumn
 
-\chapter*{Features, Magic Items and Spells}
+\chapter*{Features and Spells}
 
 \section*{Human Traits}
 \subsection*{Resourceful}
@@ -359,7 +400,11 @@ You gain proficiency in any combination of three skills or tools of your choice.
 You can cast any spell as a Ritual if that spell has the Ritual tag and the spell is in your spellbook. You needn't have the spell prepared, but you must read from the book to cast a spell in this way. 
 \subsection*{Arcane Recovery}
 You have a pool of inherent magic that replenishes when you take a Long Rest. In this pool you have an amount of charges equal to half your Wizard Level (round up). You can use these charges out of combat to restore expended spell slots. Recovering a spell slot costs a number of charges equal to the spell level and none of the slots can be level 6 or higher. For example if you're a level 4 Wizard, you have 2 charges in your pool and are able to regain either one level 2 spell slot or two level 1 spell slots. 
-
+\subsection*{Potent Cantrips}
+Your damaging cantrips affect even creatures that avoid the brunt of the effect. When you cast a cantrip at a creature and you miss with the attack roll or the target succeeds on a saving throw against the cantrip, the target takes half the cantrip's damage (if any) but suffers no additional effect from the cantrip.
+\subsection*{Evocation Savant}
+Choose two Wizard spells from the Evocation school, each of which must be no higher than level 2, and add them to your spellbook for free.
+In addition, whenever you gain access to a new level of spell slots in this class, you can add one Wizard spell from the Evocation school to your spellbook for free . The chosen spell must be of a level for which you have spell slots.
 \section*{Spells}
 \subsection*{Cantrip}
 
@@ -396,8 +441,6 @@ You hurl a mote of fire at a creature or object within range. Make a ranged spel
 You point at one creature you can see within range and the single chime of a dolorous bell is audible within 10 feet of the target. The target must succeed on a Wisdom saving throw or take ld8 Necrotic damage. If the target is missing any of its Hit Points it instead takes ld12 Necrotic damage.
 
 \subparagraph*{Cantrip Upgrade} The damage increases by one die when you reach levels 5 (2d8 or 2d12), 11 (3d8 or 3d12), and 17 (4d8 or 4d12).
-
-\eject
 
 \subsection*{Level 1}
 
@@ -450,6 +493,100 @@ If you instead touch a creature throughout the casting, you learn what spells, i
   {8 Hours}
 
 You touch a willing creature who isn't wearing armor. Until the spell ends, the target's base AC becomes 13 plus its Dexterity modifier. The spell ends early if the target dons armor.
+
+\DndSpellHeader
+  {Shield}
+  {1st-Level Abjuration}
+  {Reaction}
+  {Self}
+  {V, S}
+  {1 Round}
+
+An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.
+
+\DndSpellHeader
+  {Find Familiar}
+  {1st-Level Conjuration (Ritual) }
+  {1 hour}
+  {10 feet}
+  {V, S, M (10 gp worth of charcoal, incense, and herbs that must be consumed by fire in a brass brazier)}
+  {Instantaneous}
+
+You gain the service of a familiar, a spirit that takes an animal form you choose: bat, cat, crab, frog (toad), hawk, lizard, octopus, owl, poisonous snake, fish (quipper), rat, raven, sea horse, spider, or weasel. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a celestial, fey, or fiend (your choice) instead of a beast.
+
+Your familiar acts independently of you, but it always obeys your commands. In combat, it rolls its own initiative and acts on its own turn. A familiar can’t attack, but it can take other actions as normal.
+
+When the familiar drops to 0 hit points, it disappears, leaving behind no physical form. It reappears after you cast this spell again. As an action, you can temporarily dismiss your familiar to a pocket dimension. Alternatively, you can dismiss it forever. As an action while it is temporarily dismissed, you can cause it to reappear in any unoccupied space within 30 feet of you. Whenever the familiar drops to 0 hit points or disappears into the pocket dimension, it leaves behind in its space anything it was wearing or carrying.
+
+While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as an action, you can see through your familiar’s eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses that the familiar has. During this time, you are deaf and blind with regard to your own senses.
+
+You can’t have more than one familiar at a time. If you cast this spell while you already have a familiar, you instead cause it to adopt a new form. Choose one of the forms from the above list. Your familiar transforms into the chosen creature.
+
+Finally, when you cast a spell with a range of touch, your familiar can deliver the spell as if it had cast the spell. Your familiar must be within 100 feet of you, and it must use its reaction to deliver the spell when you cast it. If the spell requires an attack roll, you use your attack modifier for the roll.
+
+\DndSpellHeader
+  {Jim's Magic Missile}
+  {1st-Level Evocation }
+  {1 action}
+  {120 feet}
+  {V, S, M (1 gp, which is consumed as tax for using the spell)}
+  {Instantaneous}
+
+You create three twisting, whistling, hypoallergenic, gluten-free darts of magical force. Each dart can target a creature of your choice that you can see within range. Make a ranged spell attack for each missile. On a hit, the missile does 2d4 force damage.
+
+If the attack roll scores a critical, the missile does 5d4 force damage instead of the 4d4 force that you would normally get on a critical. If any of the attack roll is a natural one, all missiles turn around and hit the caster for 1 force damage per missile.
+
+\subparagraph*{Using a Higher-Level Spell Slot} When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st. This also increases the tax by 1 gp per spell slot over 1st.
+
+\DndSpellHeader
+  {Alarm}
+  {1st-Level Abjuration (Ritual)}
+  {1 minute}
+  {30 Feet}
+  {V, S, M (a tiny bell and a piece of fine silver wire)}
+  {8 hours}
+
+You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won’t set off the alarm. You also choose whether the alarm is mental or audible.
+
+A mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping. An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.
+\subsection*{Level 2}
+\DndSpellHeader
+  {Suggestion}
+  {2nd-level enchantment }
+  {1 action}
+  {30 feet}
+  {V, S, M (a snake’s tongue and either a bit of honeycomb or a drop of sweet oil)}
+  {Concentration, up to 8 hours}
+
+You suggest a course of activity (limited to a sentence or two) and magically influence a creature you can see within range that can hear and understand you. Creatures that can’t be charmed are immune to this effect. The suggestion must be worded in such a manner as to make the course of action sound reasonable. Asking the creature to stab itself, throw itself onto a spear, immolate itself, or do some other obviously harmful act ends the spell.
+
+The target must make a Wisdom saving throw. On a failed save, it purses the course of action you described to the best of its ability. The suggested course of action can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do.
+
+You can also specify conditions that will trigger a special activity during the duration. For example, you might suggest that a knight give her warhorse to the first beggar she meets. If the condition isn’t met before the spell expires, the activity isn’t performed.
+
+If you or any of your companions damage the target, the spell ends.
+
+\DndSpellHeader
+  {Aganazzar's Scorcher}
+  {2nd-level evocation }
+  {1 action}
+  {30 feet}
+  {V, S, M (a red dragon’s scale)}
+  {Instantaneous}
+
+A line of roaring flame 30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 3d8 fire damage on a failed save, or half as much damage on a successful one.
+
+\DndSpellHeader
+  {Snilloc's Snowball Swarm}
+  {2nd-level evocation }
+  {1 action}
+  {90 feet}
+  {V, S, M (a piece of ice or a small white rock chip)}
+  {Instantaneous}
+
+A flurry of magic snowballs erupts from a point you choose within range. Each creature in a 5-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes 3d6 cold damage on a failed save, or half as much damage on a successful one.
+
+\subparagraph*{Using a Higher-Level Spell Slot} When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.
 
 \vfill\eject
 
@@ -510,5 +647,17 @@ If you lose your spell book, you can use the same procedure to transcribe the Wi
 {\entryfont\paragraph*{Ser Proletius} Ser Proletius, true son of Crail's ramparts, was born, raised, and trained within its stone walls. Celebrated for his keen tactical mind and versatile mastery of arms, his strength of body and will is legendary. Whether he inherited his title or seized it through sheer merit remains unknown, but none doubt his fitness to lead Crail's knights.}\\
 {\entryfont\paragraph*{Prince Angus McFife} Angus McFife I, eldest son of King Dundax \RoyalRoman{XIII} and heir to the throne of Fife, is beloved for his gentle spirit. Fiercely protective of his people and his pet ape, Bobo, he's known to pause royal processions to aid injured animals and share humble meals with commoners, his kindness outshining any crown.}\\
 {\entryfont\paragraph*{Iona McDougall} Iona McDougall, daughter of Ser Proletius, combines elven grace - her silver hair and emerald eyes - with a warm, just heart. Betrothed to Angus McFife I, her kindness and fairness already mend disputes and uplift the humble, promising a reign of harmony beside her future king.}
+
+\part*{Magic Items}
+
+\subsection*{On the History of Master Arcanists}
+A book containing the history and description of the following spells:
+\begin{itemize}
+    \item Jim's Magic Missile
+    \item Melf's Acid Arrow
+    \item Melf's Minute Meteor
+    \item Leomund's Secret Chest
+\end{itemize}
+These spell can be copied into a spellbook.
 
 \end{document}
