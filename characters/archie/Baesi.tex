@@ -23,7 +23,7 @@
 \Background{Noble}
 \Race{Human}
 
-\Level{3}
+\Level{4}
 
 % ABILITY SCORES
 % (correct scores, no modifiers are automatically applied)
@@ -38,7 +38,7 @@
 \StrengthScoreBonus{0}
 \DexterityScoreBonus{0}
 \ConstitutionScoreBonus{0}
-\IntelligenceScoreBonus{2} % Noble Background
+\IntelligenceScoreBonus{3} % Noble Background, Skill Expert
 \WisdomScoreBonus{0}
 \CharismaScoreBonus{1} % Noble Background
 
@@ -64,15 +64,15 @@
 %% INTELLIGENCE SKILLS
 \ArcanaProficiency{E}
 \HistoryProficiency{P}
-\InvestigationProficiency{P}
+\InvestigationProficiency{P} 
 \NatureProficiency{}
-\ReligionProficiency{}
+\ReligionProficiency{P}
 
 %% WISDOM SKILLS
 \AnimalHandlingProficiency{P}
 \InsightProficiency{}
 \MedicineProficiency{}
-\PerceptionProficiency{P}
+\PerceptionProficiency{E}
 \SurvivalProficiency{}
 
 %% CHARISMA SKILLS
@@ -95,7 +95,7 @@
 %\EquipShield
 \ArmorClass{\intcalcAdd{10}{\calculateModifier{\DexterityScoreValue}}}
 
-\MaxHitPointsRolled{11} % Without Constitution Bonus, is added automatically
+\MaxHitPointsRolled{13} % Without Constitution Bonus, is added automatically
 \CurrentHitPoints{\MaxHitPointsValue}
 \TemporaryHitPoints{}
 \HitDice{d6}
@@ -139,6 +139,7 @@
 
 \AddFeat{\textbf{Alert}}
 \AddFeat{\textbf{Skilled}}
+\AddFeat{\textbf{Skill Expert}}
 
 % BACKGROUND & APPEARANCE
 \Age{}
@@ -229,7 +230,7 @@
 \SpellAttackModifier{0} % any modifier that isn't contained in "Ability Modifier + Proficiency Bonus"
 
 \FirstLevelSpellSlotsTotal{4}
-\SecondLevelSpellSlotsTotal{2}
+\SecondLevelSpellSlotsTotal{3      }
 
 % Add Prepared Spell:
 %\addPreparedSpell{Level}
@@ -264,6 +265,15 @@
 	{Toll the Dead}
 	{Action}
 	{60 Feet}
+	{}
+	{}
+	{}
+	{V, S}
+	{V, S}
+\addPreparedSpell{0}
+	{Mage Hand}
+	{Action}
+	{30 Feet}
 	{}
 	{}
 	{}
@@ -323,6 +333,15 @@
 	{T}
 	{V, S, M}
 	{V, S, M}
+\addPreparedSpell{2}
+	{Misty Step}
+	{Bonus Action}
+	{Self}
+	{}
+	{}
+	{}
+	{V}
+	{V}
 	
 % Add not prepared Spell
 %\AddSpell
@@ -350,6 +369,10 @@
 	{False}
 	{Alarm}
 	{Ritual, V, S, M}
+\AddSpell{2}
+	{False}
+	{Mirror Image}
+	{V, S}
 
 
 \begin{document}
@@ -394,6 +417,11 @@ You gain the following benefits.
 \subsection*{Skilled}
 \textbf{Calligrapher's Supplies, Forgery Kit, Perception}\\
 You gain proficiency in any combination of three skills or tools of your choice. 
+\subsection*{Skill Expert}
+You gain the following benefits.\\
+\textbf{Ability Score Increase.} Increase one ability score of your choice by 1, to a maximum of 20.\\
+\textbf{Skill Proficiency.} You gain proficiency in one skill of your choice.\\
+\textbf{Expertise.} Choose one skill in which you have proficiency but lack Expertise. You gain Expertise with that skill.\\
 
 \section*{Wizard Traits}
 \subsection*{Ritual Adept}
@@ -441,6 +469,18 @@ You hurl a mote of fire at a creature or object within range. Make a ranged spel
 You point at one creature you can see within range and the single chime of a dolorous bell is audible within 10 feet of the target. The target must succeed on a Wisdom saving throw or take ld8 Necrotic damage. If the target is missing any of its Hit Points it instead takes ld12 Necrotic damage.
 
 \subparagraph*{Cantrip Upgrade} The damage increases by one die when you reach levels 5 (2d8 or 2d12), 11 (3d8 or 3d12), and 17 (4d8 or 4d12).
+
+\DndSpellHeader
+  {Mage Hand}
+  {Conjuration Cantrip}
+  {Action}
+  {30 Feet}
+  {V, S}
+  {1 minute}
+
+A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.\\
+You can use your action to control the hand. You can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial. You can move the hand up to 30 feet each time you use it.\\
+The hand can’t attack, activate magical items, or carry more than 10 pounds.
 
 \subsection*{Level 1}
 
@@ -588,7 +628,33 @@ A flurry of magic snowballs erupts from a point you choose within range. Each cr
 
 \subparagraph*{Using a Higher-Level Spell Slot} When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.
 
-\vfill\eject
+\DndSpellHeader
+  {Misty Step}
+  {2nd-level conjuration }
+  {1 bonus action}
+  {Self}
+  {V}
+  {Instantaneous}
+
+Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space that you can see.
+
+\DndSpellHeader
+  {Mirror Image}
+  {2nd-level illusion }
+  {1 action}
+  {Self}
+  {V, S}
+  {1 minute}
+
+Three illusory duplicates of yourself appear in your space. Until the spell ends, the duplicates move with you and mimic your actions, shifting position so it’s impossible to track which image is real. You can use your action to dismiss the illusory duplicates.
+
+Each time a creature targets you with an attack during the spell’s duration, roll a d20 to determine whether the attack instead targets one of your duplicates.
+
+If you have three duplicates, you must roll a 6 or higher to change the attack’s target to a duplicate. With two duplicates, you must roll an 8 or higher. With one duplicate, you must roll an 11 or higher.
+
+A duplicate’s AC equals 10 + your Dexterity modifier. If an attack hits a duplicate, the duplicate is destroyed. A duplicate can be destroyed only by an attack that hits it. It ignores all other damage and effects. The spell ends when all three duplicates are destroyed.
+
+A creature is unaffected by this spell if it can’t see, if it relies on senses other than sight, such as blindsight, or if it can perceive illusions as false, as with truesight.
 
 \section*{Miscellaneous}
 \subsection*{Expanding the Spellbook}
