@@ -140,6 +140,7 @@
 \AddFeat{\textbf{Alert}}
 \AddFeat{\textbf{Skilled}}
 \AddFeat{\textbf{Skill Expert}}
+\AddFeat{\textbf{Boon of the Great Eagles}}
 
 % BACKGROUND & APPEARANCE
 \Age{}
@@ -210,17 +211,17 @@
 % EQUIPMENT
 \Equipment{
 	\textbf{Spellbook (Arcane Focus)}, Fine Clothes, Perfume, Playing Cards, 2 Daggers, Quarterstaff, Robe, Calligrapher's Supplies, Forgery Kit, backpack, book of lore, ink, ink pen, lamp, 10 flasks of oil, 10 sheets of Parchment, tinderbox
-	\textbf{mystery item}, Box of Candles (2 GP), 2x Find Familiar Stuff, Book "On the History of Master Arcanists"
+	\textbf{mystery item}, Box of Candles (2 GP), 1x Find Familiar Stuff, Book "On the History of Master Arcanists", 1 ration of food, \textbf{2 potions of greater Healing}, \textbf{Amethyst (100 GP)}, orb of direction, rival coin, Charlatan's Die
 }
 
 % ATTUNEMENT SLOTS
-%\addAttunedMagicItem{}
+\addAttunedMagicItem{Charlatan's Die}
 
 % MONEY
 \CP{5}
 \SP{1}
 \EP{}
-\GP{10}
+\GP{185}
 \PP{}
 
 % SPELLS
@@ -280,9 +281,9 @@
 	{V, S}
 	{V, S}
 \addPreparedSpell{1}
-	{Jim's Magic Missile}
+	{Chromatic Orb}
 	{Action}
-	{120 Feet}
+	{90 Feet}
 	{}
 	{}
 	{T}
@@ -359,7 +360,7 @@
 	{Ritual, V, S, M}
 \AddSpell{1}
 	{False}
-	{Chromatic Orb}
+	{Jim's Magic Missile}
 	{V, S, M}
 \AddSpell{1}
 	{False}
@@ -414,14 +415,21 @@ You gain an Origin feat of your choice.
 You gain the following benefits.
 \paragraph*{Initiative Proficiency} When you roll Initiative, you can add your Proficiency Bonus to the roll.
 \paragraph*{Initiative Swap} Immediately after you roll Initiative, you can swap your Initiative with the Initiative of one willing ally in the same combat. You can't make this swap if you or the ally has the Incapacitated condition. 
+
 \subsection*{Skilled}
 \textbf{Calligrapher's Supplies, Forgery Kit, Perception}\\
 You gain proficiency in any combination of three skills or tools of your choice. 
+
 \subsection*{Skill Expert}
 You gain the following benefits.\\
 \textbf{Ability Score Increase.} Increase one ability score of your choice by 1, to a maximum of 20.\\
 \textbf{Skill Proficiency.} You gain proficiency in one skill of your choice.\\
-\textbf{Expertise.} Choose one skill in which you have proficiency but lack Expertise. You gain Expertise with that skill.\\
+\textbf{Expertise.} Choose one skill in which you have proficiency but lack Expertise. You gain Expertise with that skill.
+
+\subsection*{Boon of the Great Eagles}
+Once per long rest, when the character or an ally within 10 feet would take damage from an attack, a spectral eagle wing manifests and reduces the damage by 2d8 + the character's proficiency bonus.
+The wing fades immediately after.
+
 
 \section*{Wizard Traits}
 \subsection*{Ritual Adept}
@@ -726,4 +734,30 @@ A book containing the history and description of the following spells:
 \end{itemize}
 These spell can be copied into a spellbook.
 
+\subsection*{Charlatan's Die}
+Wondrous item, common (requires attunement)
+Whenever you roll this six-sided die, you can control which number it rolls.
+
+\subsection*{Orb of Direction}
+Wondrous item, common
+While holding this orb, you can use an action to determine which way is north.This properly functions only on the Meterial Plane.
+
+
+\subsection*{Rival Coin}
+Wondrous item, common
+This gold coin has a creature embossed on each side.
+The two depicted creatures must be famous rivals or enemies of each other.
+For example, a Rival Coin might show Iggwilv on one sideand Mordenkainen on the other, or Venger on one side and Tiamat on the other.
+One of these figures is on the "heads" side of the coin, the other on the "tails" side.
+
+The coin has 1 charge and regains its expended charge daily at dawn. You can take a Magic action to toss the coin, expending its charge.
+Roll any die to determine whether the coin comes up heads (on an even number) or tails (on an odd number).
+The roll also determines the effect:
+
+Heads: Target one creature you can see within 60 feet of yourself.
+The target makes a DC 13 Wisdom saving throw.
+On a failed save, the target takes 2d4 Psychic damage and has Disadvantage on the next attack roll it makes before the end of its next turn.
+On a successful save, the target takes half as much damage only.
+
+Tails: You take 1d4 Psychic damage.
 \end{document}

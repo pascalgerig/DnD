@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1760723617.70868 "c:/Users/pasca/git/DnD/characters/archie/Baesi.tex" "Baesi.pdf" "Baesi" 1760723623.14541 0
+["lualatex"] 1762085184.01369 "c:/Users/pasca/git/DnD/characters/archie/Baesi.tex" "Baesi.pdf" "Baesi" 1762085188.90082 0
   "../../templates/template_character-sheet/5e24_player-character-sheet/character-sheet-commands_specific.tex" 1748276993 18378 1009da8d685402ad4fdfbda7e4508049 ""
   "../../templates/template_character-sheet/5e24_player-character-sheet/character-sheet.tex" 1748276993 815 4d56d3a7c085cb74cdd5d22e9c7ba921 ""
   "../../templates/template_character-sheet/5e24_player-character-sheet/character-sheet/battle-stats.tex" 1748276993 18318 a729eeef85339a7f3155d25148dcc4ae ""
@@ -63,8 +63,8 @@
   "../../templates/template_magic-item/magic-items_commands.sty" 1748276993 1971 d1e708a6c8e6c912b264cfbfeca03cb0 ""
   "../../templates/utilities/m4rz-colors.sty" 1748276995 1383 abd8a8320e0e3781910586c434c857e9 ""
   "../../templates/utilities/m4rz-fonts.sty" 1748276995 12074 991598fb5ae1fb19c6fe0f35d47b6306 ""
-  "Baesi.aux" 1760723622 3632 31257f17286077a1c370ad9329ad25bc "lualatex"
-  "Baesi.tex" 1760723617 33808 5f30ce2846cb09c2ea93bd16ce508091 ""
+  "Baesi.aux" 1762085188 3632 0c89efe4855bc509051c82d6c0087061 "lualatex"
+  "Baesi.tex" 1762085183 35644 cf93a40cec994c3ce88ca1f68426bd21 ""
   "C:/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/alphacodepharaohregular-jrdob.luc" 1748277833 7298 9e71d546ad097bfd10fd6ed46481bafe ""
   "C:/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/alpmagi.luc" 1748277833 5202 601d69d9f0247e6659d99a9d4789bf0a ""
   "C:/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/ar-ciela-compartment.luc" 1748277833 12185 90d488214f6706493f164807bb79fa48 ""
@@ -116,7 +116,7 @@
   "C:/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/xolonium-bold.luc" 1748277833 149778 f3b92def6028a88165a9a5a24534f38a ""
   "C:/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/xolonium-regular.luc" 1748277833 149920 a01d651425d4424c6e2330a920ac8190 ""
   "C:/texlive/2025/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1742406961 317528 2b7a5fdb47fccc82af08682a07a3adaa ""
-  "c:/Users/pasca/git/DnD/characters/archie/Baesi.tex" 1760723617 33808 5f30ce2846cb09c2ea93bd16ce508091 ""
+  "c:/Users/pasca/git/DnD/characters/archie/Baesi.tex" 1762085183 35644 cf93a40cec994c3ce88ca1f68426bd21 ""
   "c:/texlive/2025/texmf-dist/dvips/pst-tools/pst-tools.pro" 1742238818 8227 6f74f061e0659e2d4a1eaab0a273b6e8 ""
   "c:/texlive/2025/texmf-dist/dvips/pstricks/pst-algparser.pro" 1742238832 30047 8a855069b8c74fd47ffa0f2ee54eac87 ""
   "c:/texlive/2025/texmf-dist/dvips/pstricks/pstricks.pro" 1742238832 37460 062a8ec90ec6dcd831b11f90d3671504 ""
