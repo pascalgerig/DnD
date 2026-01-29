@@ -147,9 +147,28 @@
 \AddClassFeature{E}{\textbf{Bastion of Law}\\Use Sorcery Points to create shielding ward}
 \AddClassFeature{E}{\textbf{Sorcery Incarnate}}
 
-\AddSpeciesFeature{E}{\textbf{Artificial Form}\\Thistlenight is a construct.}
-\AddSpeciesFeature{L}{\textbf{Faerie Glamour}\\Can cast Disguise Self \textbf{once} per Long Rest.}
-\AddSpeciesFeature{E}{\textbf{Childish Agility}\\Can move through the space of any creature that is medium or larger.}
+\AddSpeciesFeature{E}{%
+	\textbf{Artificial Form}\\Healing spell affected Construct.%
+	\begin{itemize}%
+		\renewcommand{\labelitemii}{%
+			\rput(0,5){%
+				\pscustom[linestyle=none,fillstyle=solid,fillcolor=grey_text_color]{%
+					\moveto(3.5,3.5)
+					\lineto(3.5,-3.5)
+					\lineto(-3.5,-3.5)
+					\lineto(-3.5,3.5)
+					\closepath
+				}%
+			}%
+		}%
+		\item \textbf{Self Repair (\intcalcAdd{0}{\ProficiencyValue} Uses)}\\Mending restores Hit Die + CON
+	\end{itemize}%
+}
+\AddSpeciesFeature{E}{\textbf{Magical Fortification}\\Resilient against Magical Effects}
+\AddSpeciesFeature{E}{\textbf{Childish Agility}\\Can move through the space of any creature that is Medium or larger and hide if half covered by those.\\Acrobatics Proficiency}
+\AddSpeciesFeature{L}{\textbf{Faerie Glamour}\\Minor Illusion Cantrip\\Disguise Self once per Long Rest}
+
+\AddFeat{\textbf{Feywild Connection}\\Friendly Fey are inclined to help you in the Feywild}
 
 % BACKGROUND & APPEARANCE
 
@@ -214,7 +233,7 @@
 
 % EQUIPMENT
 \Equipment{
-	\textbf{Elven Chain}, \textbf{Magical Wood Polish}, \textbf{Amber Necklace} (Arcane Focus), 2 \textbf{Magical Mechanical Gear}, Scroll of Entangle, Potion of Invisibility, Flask of Holy Water, 2 Daggers, Spear, Light Crossbow, 20 bolts, Gloon (spooky Glaur), set of traveler's clothes, candlestick whose candlelight looks like a tiny dancing fairy made of fire, 8-inch-long glass ant figurine, silver fork with the outer tines bent sideways, backpack, crowbar, hammer, 10 pitons, tinderbox, 10 days of rations, waterskin, 50 feet of hempen rope
+	\textbf{Elven Chain}, \textbf{Magical Wood Polish}, \textbf{Amber Necklace} (Arcane Focus), 2 \textbf{Magical Mechanical Gear}\\Scroll of Entangle, Potion of Invisibility, Flask of Holy Water, 2 Daggers, Spear, Light Crossbow, 20 bolts, Gloon (spooky Glaur), set of traveler's clothes, candlestick whose candlelight looks like a tiny dancing fairy made of fire, 8-inch-long glass ant figurine, silver fork with the outer tines bent sideways, backpack, crowbar, hammer, 10 pitons, tinderbox, 10 days of rations, waterskin, 50 feet of hempen rope
 }
 
 \addAttunedMagicItem{Amulet of Proof Against Detection}
@@ -282,6 +301,15 @@
 	{}
 	{V}
 	{V}
+\addPreparedSpell{0}
+	{Minor Illusion}
+	{Action}
+	{30 Feet}
+	{}
+	{}
+	{}
+	{S, M}
+	{S, M}
 \addPreparedSpell{1}
 	{Alarm}
 	{1 Min}
@@ -496,18 +524,60 @@
 
 \section*{Wechselkind Traits}
 Constructed of sturdy materials and enchanted with powerful faerie magic, wechselkind possess several traits that distinguish them from the other races of Etharis.
-\subsection*{Artificial Form}
-As a constructed creature, your body functions differently than a normal person.
-\begin{itemize}
-	\item You have advantage on saving throws against being poisoned, and you have resistance to poison damage.
-	\item You are immune to disease. You don't need to eat, drink, sleep, or breathe. You are still considered humanoid.
-\end{itemize}
+\subsection*{Artifical Form}
+You were made, not born, and your unnatural origin forever marks you as different. You are a Construct, but your enchanted form still benefits from healing spells. You can also heal yourself by spending Hit Dice during Short Rests and Long Rests, as normal.
+
+You don't need to eat, drink, sleep, or breathe. You must still be inactive for 8 hours during a Long Rest to gain its benefits.
+\paragraph*{Self-Repair} If you take this trait twice, when the Mending cantrip is cast on you, you can spend a Hit Die to regain a number of Hit Points equal to the roll of the die plus your Constitution modifier (minimum 1 Hit Point). You can use this feature a number of times equal to your Proficiency Bonus, regaining all expended uses when you finish a Long Rest.
+\subsection*{Magical Fortification}
+\textit{Wisdom Saving Throws}\\
+The more that magic threatens you, the more your resilience to it increases. Choose an ability score: Strength, Dexterity, Constitution, Intelligence, Wisdom, or Charisma. You have Advantage on saving throws using that ability score against spells and other magical effects.
+\subsection*{Childish Agility}
+\subsubsection*{Creature Cover}
+By slipping behind enemies or allies alike, you are able to fade from view with ease. You can take the Hide action even when you have Half Cover from a creature, as long as that creature is of a size larger than you.
+\subsubsection*{Intuitive Acrobat}
+Staying loose and limber means being able to get out of even the tightest spots when your life is on the line. You have proficiency in the Acrobatics skill.
+\subsubsection*{Pass Through}
+Making use of constant movement lets you minimize the threat of larger foes. You can move through the space of any creature at least on size larger than you.
 \subsection*{Faerie Glamour}
 When the faerie leaves a wechselkind in place of a mortal child, they cover it with a glamour to make it appear identical to the child that was stolen. Over time this glamour fades, but a wechselkind can still call upon it in times of need.
+\subsubsection*{Magical Savvy (Minor Illusion)}
+Whether through intensive study or the innate touch of magic in your blood, you have the ability to invoke magical spells. You learn one cantrip of your choice from any spell list, which you cast using the associated ability score: Intelligence for Wizard spells, Wisdom for Cleric and Druid spells, and Charisma for Bard, Sorcerer, and Warlock spells. If the spell appears on multiple spell lists, choose one to determine the spellcasting attribute for that spell.
+\subsubsection*{Magical Savant (Disguise Self)}
+\textit{Only to take on the appearance of the child you were intended to replace}\\
+If you take this trait multiple times, you select a different cantrip each time, or you can select a level 1 spell from the same list as a cantrip you have previously chosen. If you select a level 1 spell, you can cast it once without expending a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. If you have levels in the associated spellcasting class, you always have this spell prepared, and it doesn't count against the number of spells you can prepare each day.
 
-You may cast the Disguise Self spell once with this trait, but only to take on the appearance of the child you were intended to replace, and you regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for this spell.
-\subsection*{Childish Agility}
-You can move through the space of any creature that is of a size larger than yours. You gain proficiency in the Acrobatics skill.
+\section*{Feylost Background}
+You are haunted by the fact the Feywild - a mirror world hidden behind a mere twist of perception-is only a hair's breadth away. Although your memories of the Feywild grow fainter with each passing day, your heart swells with a mixture of fear and joy at the prospect of one day venturing back to the Plane of Faerie-your home away from home.
+\subsection*{Feature: Feywild Connection}
+Your mannerisms and knowledge of fey customs are recognized by natives of the Feywild, who see you as one of their own. Because of this, friendly Fey creatures are inclined to come to your aid if you are lost or need help in the Feywild.
+\vfill\eject
+\subsection*{Fey Mark}
+You were transformed in some small way by your stay in the Feywild and gained a fey mark, determined by rolling on the Fey Mark table.
+\begin{DndTable}[header=Fey Mark]{llX}
+				& d8	& Fey Mark\\
+				& 1		& Your eyes swirl with iridescent colors.\\
+				& 2		& You have a sweet scent, like that of nectar or honey.\\
+				& 3		& You have long whiskers like those of a cat.\\
+				& 4		& Your ears are covered with soft tufts of fur.\\
+				& 5		& Your skin sparkles in moonlight.\\
+	\textbullet	& 6		& Flowers wilt in your presence.\\
+				& 7		& Your hair is made of vines or brambles and grows back to normal length within 1 hour of being cut.\\
+				& 8		& You have a tail like that of a dog or another animal.
+\end{DndTable}
+\subsection*{Feywild Visitor}
+Whenever you're sound asleep or in a deep trance during a long rest, a spirit of the Feywild might pay you a visit, if the DM wishes it. Determine the spirit's form by rolling on the Feywild Visitor table. No harm ever comes to you as a result of such visits, which can last for minutes or hours, and you remember each visit when you wake up. Conversations that occur with a visitor can contain any number of things, from messages and insights to nonsense and red herrings, at the DM's discretion. Such conversations are always conducted in a language you can understand, even if the Feywild visitor can't speak that language normally.
+\begin{DndTable}[header=Feywild Visitor]{lX}
+	d8	& Visitor		\\
+	1	& Awakened Creature (a Beast or an ordinary plant that has had the awaken spell cast on it)	\\
+	2	& Centaur		\\
+	3	& Dryad			\\
+	4	& Faerie Dragon	\\
+	5	& Pixie			\\
+	6	& Satyr			\\
+	7	& Sprite		\\
+	8	& Unicorn		\\
+\end{DndTable}
 
 \section*{Sorcerer Traits}
 \subsection*{Innate Sorcery}
@@ -517,7 +587,6 @@ An event in your past left an indelible mark on you, infusing you with simmering
 	\item You have Advantage on the attack rolls of Sorcerer spells you cast.
 \end{itemize}
 You can use this feature twice, and you regain expended uses of it when you finish a Long Rest.
-\vfill\eject
 \subsection*{Font of Magic}
 You can tap into the wellspring within yourself. This wellspring is represented by Sorcery Points, which allow you to create a variety of magical effects.
 
@@ -545,6 +614,7 @@ Because your magic flows from within, you can alter your spells to suit your nee
 You can use only one Metamagic option on a spell when you cast it unless otherwise noted in one of those options.
 
 Whenever you gain a Sorcerer level, you can replace one of your Metamagic options with one you don't know. You gain two more options at Sorcerer level 10 and two more at Sorcerer level 17.
+\vfill\eject
 \subsubsection*{Seeking Spell}
 \textit{Cost: 1 Sorcery Point}\\
 If you make an attack roll for a spell and miss, you can spend 1 Sorcery Point to reroll the d20, and you must use the new roll.
@@ -661,6 +731,22 @@ The hand can't attack, activate magical items, or carry more than 10 pounds.
 You drive a disorienting spike of psychic energy into the mind of one creature you can see within range. The target must succeed on an Intelligence saving throw or take 1d6 psychic damage and subtract 1d4 from the next saving throw it makes before the end of your next turn.
 
 \subparagraph*{At Higher Levels} This spell's damage increases by 1d6 when you reach certain levels: \textbf{5th level (2d6)}, 11th level (3d6), and 17th level (4d6).
+
+\DndSpellHeader
+  {Minor Illusion}
+  {Illusion Cantrip}
+  {Action}
+  {30 Feet}
+  {S, M}
+  {1 Minute}
+
+You create a sound or an image of an object within range that lasts for the duration. See the descriptions below for the effects of each. The illusion ends if you cast this spell again.
+
+If a creature takes a Study action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.
+
+\paragraph*{Sound} If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else's voice, a lion's roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends.
+
+\paragraph*{Image} If you create an image of an object - such as a chair, muddy footprints, or a small chest—it must be no larger than a 5-foot Cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, since things can pass through it.
 
 \subsection*{1st Level}
 

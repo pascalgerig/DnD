@@ -178,6 +178,9 @@
 \newcommand\ClassFeatures{}
 
 \makeatletter
+\newcommand{\ClassFeaturesSection}[1]{%
+	\g@addto@macro\ClassFeatures{\item[]\hspace*{-\leftmargin}\textbf{#1}}
+}%
 \newcommand{\AddClassFeature}[2]{%
 	\g@addto@macro\ClassFeatures{\CustomItemLabel{#1}\item #2}
 }%
