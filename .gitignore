@@ -27,17 +27,17 @@ Gimp Files
 Miscellaneous
 ###################################################################
 Raw-Images/
+*.raw*
 Gimp-Projects/
 AI\ Generated/
 FA_Mapmaking_Pack/
 one_shots/stylesheets/images/assets/
 one_shots/stylesheets/images/maps/
 one_shots/stylesheets/images/textures/
-one_shots/Penguins_of_Madagascar/penguins_of_madagascar_main.pdf
 Storm_Rising/
 
 friends/
 campaign_Gloryhammer/
 resources/
 templates/utilities/images/
-campaigns/Gloryhammer/Tales_from_the_Kingdom_of_Fife/Tales_from_the_Kingdom_of_Fife_main.pdf
+*_main.pdf
