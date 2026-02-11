@@ -23,7 +23,7 @@
 \Background{Noble}
 \Race{Human}
 
-\Level{4}
+\Level{5}
 
 % ABILITY SCORES
 % (correct scores, no modifiers are automatically applied)
@@ -52,6 +52,15 @@
 \IntelligenceProficiency{P}
 \WisdomProficiency{P}
 \CharismaProficiency{}
+
+% +1 Cloak of Protection
+
+\StrengthSavingThrowBonus{1}
+\DexteritySavingThrowBonus{1}
+\ConstitutionSavingThrowBonus{1}
+\IntelligenceSavingThrowBonus{1}
+\WisdomSavingThrowBonus{1}
+\CharismaSavingThrowBonus{1}
 
 %% STRENGTH SKILLS
 \AthleticsProficiency{}
@@ -93,9 +102,9 @@
 \PassivePerceptionModifier{0}
 
 %\EquipShield
-\ArmorClass{\intcalcAdd{10}{\calculateModifier{\DexterityScoreValue}}}
+\ArmorClass{\intcalcAdd{10}{\intcalcAdd{1}{\calculateModifier{\DexterityScoreValue}}}} % 10 base + 1 cloat of protection + dex modifier
 
-\MaxHitPointsRolled{13} % Without Constitution Bonus, is added automatically
+\MaxHitPointsRolled{16} % Without Constitution Bonus, is added automatically
 \CurrentHitPoints{\MaxHitPointsValue}
 \TemporaryHitPoints{}
 \HitDice{d6}
@@ -124,8 +133,8 @@
 
 % \addSpellStatistic{#1}{#2}{#3}{#4}{#5}
 % #1: Spell-Name, #2: ATK, DC, BOTH, #3: \calculateModifier{SkillScore}, #4: Damage, #5: Additional Information
-\addSpellStatistic{Fire Bolt}{ATK}{\calculateModifier{\IntelligenceScoreValue}}{1d10}{Fire}
-\addSpellStatistic{Toll the Dead}{DC}{\calculateModifier{\IntelligenceScoreValue}}{1d8}{Necrotic, 1d12 Necrotic if target misses HP}
+\addSpellStatistic{Fire Bolt}{ATK}{\calculateModifier{\IntelligenceScoreValue}}{2d10}{Fire}
+\addSpellStatistic{Toll the Dead}{DC}{\calculateModifier{\IntelligenceScoreValue}}{2d8}{Necrotic, 2d12 Necrotic if target misses HP}
 
 % E: normal bullet point, A: Action, B: Bonus Action, R: Reaction, L: Limited Uses
 \AddClassFeature{E}{\textbf{Ritual Adept}}
@@ -216,6 +225,7 @@
 
 % ATTUNEMENT SLOTS
 \addAttunedMagicItem{Charlatan's Die}
+\addAttunedMagicItem{Cloak of Protection}
 
 % MONEY
 \CP{5}
@@ -231,7 +241,8 @@
 \SpellAttackModifier{0} % any modifier that isn't contained in "Ability Modifier + Proficiency Bonus"
 
 \FirstLevelSpellSlotsTotal{4}
-\SecondLevelSpellSlotsTotal{3      }
+\SecondLevelSpellSlotsTotal{3}
+\ThirdLevelSpellSlotsTotal{2}
 
 % Add Prepared Spell:
 %\addPreparedSpell{Level}
@@ -317,15 +328,6 @@
 	{V, S, M}
 	{V, S, M}
 \addPreparedSpell{2}
-	{Aganazzar's Scorcher}
-	{Action}
-	{30 Feet}
-	{}
-	{}
-	{T}
-	{V, S, M}
-	{V, S, M}
-\addPreparedSpell{2}
 	{Snilloc's Snowball Swarm}
 	{Action}
 	{90 Feet}
@@ -343,7 +345,33 @@
 	{}
 	{V}
 	{V}
-	
+\addPreparedSpell{3}
+	{Fireball}
+	{Action}
+	{150 Feet}
+	{}
+	{}
+	{T}
+	{V, S, M}
+	{V, S, M}
+\addPreparedSpell{3}
+	{Conjure Constructs}
+	{Action}
+	{60 Feet}
+	{T}
+	{}
+	{T}
+	{V, S, M}
+	{V, S, M}
+\addPreparedSpell{3}
+	{Fly}
+	{Action}
+	{Touch}
+	{T}
+	{}
+	{T}
+	{V, S, M}
+	{V, S, M}
 % Add not prepared Spell
 %\AddSpell
 %	{Level}
@@ -374,6 +402,10 @@
 	{False}
 	{Mirror Image}
 	{V, S}
+\AddSpell{2}
+	{False}
+	{Aganazzar's Scorcher}
+	{V, S, M}
 
 
 \begin{document}
@@ -441,6 +473,8 @@ Your damaging cantrips affect even creatures that avoid the brunt of the effect.
 \subsection*{Evocation Savant}
 Choose two Wizard spells from the Evocation school, each of which must be no higher than level 2, and add them to your spellbook for free.
 In addition, whenever you gain access to a new level of spell slots in this class, you can add one Wizard spell from the Evocation school to your spellbook for free . The chosen spell must be of a level for which you have spell slots.
+\subsection*{Memorize Spell}
+Whenever you finish a Short Rest, you can study your spellbook and replace one of the level 1+ Wizard spells you have prepared for your Spellcasting feature with another level 1+ spell from the book.
 \section*{Spells}
 \subsection*{Cantrip}
 
@@ -664,6 +698,49 @@ A duplicate’s AC equals 10 + your Dexterity modifier. If an attack hits a dupl
 
 A creature is unaffected by this spell if it can’t see, if it relies on senses other than sight, such as blindsight, or if it can perceive illusions as false, as with truesight.
 
+\DndSpellHeader
+  {Fire Ball}
+  {3rd-level Evocation }
+  {1 action}
+  {150 feet}
+  {V, S, M}
+  {Instantaneous}
+
+A bright streak flashes from you to a point you choose within range and then blossoms with a low roar into a fiery explosion. Each creature in a 20-foot-radius Sphere centered on that point makes a Dexterity saving throw, taking 8d6 Fire damage on a failed save or half as much damage on a successful one.
+
+Flammable objects in the area that aren't being worn or carried start burning.
+
+\subparagraph*{Using a Higher-Level Spell Slot} The damage increases by 1d6 for each spell slot level above 3.
+
+\DndSpellHeader
+  {Conjure Constructs}
+  {3rd-level Conjuration }
+  {1 action}
+  {60 feet}
+  {V, S, M}
+  {Instantaneous}
+
+You conjure a group of intangible, orderly spirits that appear as a Medium group of modrons or other Constructs in an unoccupied space you can see within range. The spirits last for the duration. When you cast this spell and as a Magic action on subsequent turns, you can command the spirits to target one creature or object you can see within 5 feet of the spirits and create one of the following effects:
+
+\subparagraph*{Clockwork Force} The target makes a Dexterity saving throw, taking 3d6 Force damage on a failed save or half as much damage on a successful one.
+\subparagraph*{Orderly Ward} The target gains Temporary Hit Points equal to 1d6 plus your spellcasting ability modifier.
+
+When you move on your turn, you can also move the spirits up to 30 feet to an unoccupied space you can see.
+
+\subparagraph*{Using a Higher-Level Spell Slot} The damage and Temporary Hit Points both increase by 1d6 for each spell slot level above 3.
+
+\DndSpellHeader
+  {Fly}
+  {3rd-level Transmutation }
+  {1 action}
+  {Touch}
+  {V, S, M}
+  {Concentration, up to 10 minutes}
+
+You touch a willing creature. For the duration, the target gains a Fly Speed of 60 feet and can hover. When the spell ends, the target falls if it is still aloft unless it can stop the fall.
+
+\subparagraph*{Using a Higher-Level Spell Slot} You can target one additional creature for each spell slot level above 3.
+
 \section*{Miscellaneous}
 \subsection*{Expanding the Spellbook}
 The spells you add to your spellbook as you gain levels reflect your ongoing magical research, but you might find other spells during your adventures that you can add to the book. You could discover a Wizard spell in a book, for example, and then copy it into your spellbook.
@@ -737,6 +814,10 @@ These spell can be copied into a spellbook.
 \subsection*{Charlatan's Die}
 Wondrous item, common (requires attunement)
 Whenever you roll this six-sided die, you can control which number it rolls.
+
+\subsection*{Cloak of Protection}
+Wondrous item, uncommon (requires attunement)
+You gain a +1 bonus to AC and saving throws while you wear this cloak.
 
 \subsection*{Orb of Direction}
 Wondrous item, common

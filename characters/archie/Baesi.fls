@@ -80,6 +80,7 @@ INPUT C:/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/kalam-regular.luc
 INPUT C:/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/kalam-bold.luc
 INPUT C:/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/kraken.luc
 INPUT C:/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/copenhagen.luc
+INPUT C:/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/dungrg-.luc
 INPUT C:/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/chomsky.luc
 INPUT C:/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/steelfish-outline.luc
 INPUT C:/texlive/2025/texmf-var/luatex-cache/generic/fonts/otl/steelfish-eb.luc
@@ -518,6 +519,10 @@ INPUT ../../templates/template_dnd/img/paper.jpg
 INPUT ../../templates/template_dnd/img/paper.jpg
 INPUT ../../templates/template_dnd/img/paper.jpg
 INPUT ../../templates/template_dnd/img/footerscroll.pdf
+INPUT ../../templates/template_dnd/img/footerscroll.pdf
+INPUT ../../templates/template_dnd/img/paper.jpg
+INPUT ../../templates/template_dnd/img/paper.jpg
+INPUT ../../templates/template_dnd/img/paper.jpg
 INPUT ../../templates/template_dnd/img/footerscroll.pdf
 INPUT ../../templates/template_dnd/img/paper.jpg
 INPUT ../../templates/template_dnd/img/paper.jpg
