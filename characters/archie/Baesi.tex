@@ -23,7 +23,7 @@
 \Background{Noble}
 \Race{Human}
 
-\Level{5}
+\Level{6}
 
 % ABILITY SCORES
 % (correct scores, no modifiers are automatically applied)
@@ -104,7 +104,7 @@
 %\EquipShield
 \ArmorClass{\intcalcAdd{10}{\intcalcAdd{1}{\calculateModifier{\DexterityScoreValue}}}} % 10 base + 1 cloat of protection + dex modifier
 
-\MaxHitPointsRolled{16} % Without Constitution Bonus, is added automatically
+\MaxHitPointsRolled{21} % Without Constitution Bonus, is added automatically
 \CurrentHitPoints{\MaxHitPointsValue}
 \TemporaryHitPoints{}
 \HitDice{d6}
@@ -220,18 +220,20 @@
 % EQUIPMENT
 \Equipment{
 	\textbf{Spellbook (Arcane Focus)}, Fine Clothes, Perfume, Playing Cards, 2 Daggers, Quarterstaff, Robe, Calligrapher's Supplies, Forgery Kit, backpack, book of lore, ink, ink pen, lamp, 10 flasks of oil, 10 sheets of Parchment, tinderbox
-	\textbf{mystery item}, Box of Candles (2 GP), 1x Find Familiar Stuff, Book "On the History of Master Arcanists", 1 ration of food, \textbf{2 potions of greater Healing}, \textbf{Amethyst (100 GP)}, orb of direction, rival coin, Charlatan's Die
+	\textbf{mystery item}, Box of Candles (2 GP), 2x Find Familiar Stuff, Book "On the History of Master Arcanists", 3 ration of food, \textbf{Amethyst (100 GP)}, orb of direction, orb of time, pearl (150 GP), \textbf{Scroll of Darkvision}, \textbf{Scroll of Dragonbreath}, 3 Scrolls with Text, Waterproof scroll tube, rival coin, Die, \textbf{Eye of Minute Seeing}, \textbf{Feylight Blossom}
+	\textbf{broken armour piece}, Alchemy Jug
 }
 
 % ATTUNEMENT SLOTS
 \addAttunedMagicItem{Charlatan's Die}
 \addAttunedMagicItem{Cloak of Protection}
+\addAttunedMagicItem{Broken Armour Piece}
 
 % MONEY
 \CP{5}
 \SP{1}
 \EP{}
-\GP{185}
+\GP{780}
 \PP{}
 
 % SPELLS
@@ -242,7 +244,7 @@
 
 \FirstLevelSpellSlotsTotal{4}
 \SecondLevelSpellSlotsTotal{3}
-\ThirdLevelSpellSlotsTotal{2}
+\ThirdLevelSpellSlotsTotal{3}
 
 % Add Prepared Spell:
 %\addPreparedSpell{Level}
@@ -345,6 +347,15 @@
 	{}
 	{V}
 	{V}
+\addPreparedSpell{2}
+	{Mirror Image}
+	{Action}
+	{Self}
+	{}
+	{}
+	{}
+	{V, S}
+	{V, S}
 \addPreparedSpell{3}
 	{Fireball}
 	{Action}
@@ -400,11 +411,11 @@
 	{Ritual, V, S, M}
 \AddSpell{2}
 	{False}
-	{Mirror Image}
-	{V, S}
-\AddSpell{2}
-	{False}
 	{Aganazzar's Scorcher}
+	{V, S, M}
+\AddSpell{3}
+	{False}
+	{Leomund's Tiny Hut}
 	{V, S, M}
 
 
@@ -718,7 +729,7 @@ Flammable objects in the area that aren't being worn or carried start burning.
   {1 action}
   {60 feet}
   {V, S, M}
-  {Instantaneous}
+  {Concentration, up to 10 minutes}
 
 You conjure a group of intangible, orderly spirits that appear as a Medium group of modrons or other Constructs in an unoccupied space you can see within range. The spirits last for the duration. When you cast this spell and as a Magic action on subsequent turns, you can command the spirits to target one creature or object you can see within 5 feet of the spirits and create one of the following effects:
 
@@ -740,6 +751,22 @@ When you move on your turn, you can also move the spirits up to 30 feet to an un
 You touch a willing creature. For the duration, the target gains a Fly Speed of 60 feet and can hover. When the spell ends, the target falls if it is still aloft unless it can stop the fall.
 
 \subparagraph*{Using a Higher-Level Spell Slot} You can target one additional creature for each spell slot level above 3.
+
+\DndSpellHeader
+  {Leomund's Tiny Hut}
+  {3rd-level Evocation }
+  {1 minute or Ritual}
+  {Self}
+  {V, S, M}
+  {8 hours}
+
+A 10-foot Emanation springs into existence around you and remains stationary for the duration. The spell fails when you cast it if the Emanation isn't big enough to fully encapsulate all creatures in its area.
+
+Creatures and objects within the Emanation when you cast the spell can move through it freely. All other creatures and objects are barred from passing through it. Spells of level 3 or lower can't be cast through it, and the effects of such spells can't extend into it.
+
+The atmosphere inside the Emanation is comfortable and dry, regardless of the weather outside. Until the spell ends, you can command the interior to have Dim Light or Darkness (no action required). The Emanation is opaque from the outside and of any color you choose, but it's transparent from the inside.
+
+The spell ends early if you leave the Emanation or if you cast it again.
 
 \section*{Miscellaneous}
 \subsection*{Expanding the Spellbook}
@@ -811,10 +838,6 @@ A book containing the history and description of the following spells:
 \end{itemize}
 These spell can be copied into a spellbook.
 
-\subsection*{Charlatan's Die}
-Wondrous item, common (requires attunement)
-Whenever you roll this six-sided die, you can control which number it rolls.
-
 \subsection*{Cloak of Protection}
 Wondrous item, uncommon (requires attunement)
 You gain a +1 bonus to AC and saving throws while you wear this cloak.
@@ -823,6 +846,11 @@ You gain a +1 bonus to AC and saving throws while you wear this cloak.
 Wondrous item, common
 While holding this orb, you can use an action to determine which way is north.This properly functions only on the Meterial Plane.
 
+\subsection*{Orb of Time}
+\textit{Wondrous Item, Common}\\
+{\entryfont This orb can be used as an Arcane Focus.
+
+While holding the orb, you can take a Magic action to determine whether it is morning, afternoon, evening, or nighttime. This property functions only on the Material Plane.}
 
 \subsection*{Rival Coin}
 Wondrous item, common
@@ -841,4 +869,46 @@ On a failed save, the target takes 2d4 Psychic damage and has Disadvantage on th
 On a successful save, the target takes half as much damage only.
 
 Tails: You take 1d4 Psychic damage.
+
+\subsection*{Broken Armour Piece}
+\textit{Wondrous Item, Rare (Requires Attunement)}\\
+{\entryfont This jagged shard of scorched plate armour is cold to the touch, its blackened metal veined with dull crimson cracks that never emit warmth. Though broken and incomplete, it clings unnaturally to those who handle it.
+
+When touching the fragment, the creature immediately becomes attuned to it. This attunement ignores the normal time required and does not require any consent.
+
+\paragraph*{Curse} This item is cursed. Attuning to it curses you until you are targeted by a Remove Curse spell or similar magic. As long as you remain cursed, you are unwilling to part with the fragment. If it leaves your possession, it magically reappears in your pocket, pack, or among your belongings at the next dawn.
+
+The curse deepens the longer you remain attuned to the fragment. The later stages of this curse cannot be detected, identified, or revealed by spells such as identify, divination magic, experimentation, or any other means before they manifest. When a new stage takes effect, its effects become immediately obvious to the attuned creature.
+
+\subparagraph*{Smothered Embers (Stage 1)} After four days attuned to the fragment, whenever you make an Attack Roll for a Spell or Weapon Attack that deals Fire damage, you take a -1 penalty to the attack roll. In addition, whenever you roll Fire Damage, reduce the result of each individual Damage Die by 1 (minimum of 1 per die).}
+
+\subsection*{Eyes of Minute Seeing}
+\textit{Wondrous Item, Uncommon}\\
+{\entryfont These crystal lenses fit over the eyes. While wearing them, your vision improves significantly out to a range of 1 foot, granting you Darkvision within that range and Advantage on Intelligence (Investigation) checks made to examine something within that range.}
+
+\subsection*{Feylight Blossom}
+\textit{Wondrous Item, Common}\\
+{\entryfont When you consume this flower, you gain \DndDice{2d6} Temporary Hit Points and Advantage on the next Constitution Saving within the next hour. However, you also gain Disadvantage on all Attack Rolls you make for 1 minute.}
+
+\subsection*{Alchemy Jug}
+\textit{Wondrous Item, Uncommon}\\
+{\entryfont This ceramic jug appears to be able to hold a gallon of liquid and weighs 12 pounds whether full or empty. The jug sloshes when it is shaken, even if the jug is empty.
+
+You can take a Magic action and name one liquid from the Alchemy Jug Liquids table to cause the jug to produce the chosen liquid. Afterward, you can uncork the jug as a Utilize action and pour that liquid out, up to 2 gallons per minute. The maximum amount of liquid the jug can produce depends on the liquid you named.
+
+Once the jug starts producing a liquid, it can't produce a different one, or more of one that has reached its maximum, until the next dawn.}
+
+\begin{DndTable}[header=Alchemy Jug Liquids]{ XX }
+Liquid & Max. Amount\\
+Acid & 8 ounces\\
+Basic Poison & 4 ounces\\
+Beer & 4 gallons\\
+Honey & 1 gallon\\
+Mayonnaise & 2 gallons\\
+Oil & 1 quart\\
+Vinegar & 2 gallons\\
+Water, fresh & 8 gallons\\
+Water, salt & 12 gallons\\
+Wine & 1 gallon\\
+\end{DndTable}
 \end{document}
