@@ -507,6 +507,11 @@ INPUT c:/texlive/2025/texmf-dist/fonts/vf/adobe/bookman/pbkdo8t.vf
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/bookman/pbkdo8r.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/bookman/pbkdo8t.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/vf/adobe/bookman/pbkdo8t.vf
+INPUT ../../templates/template_dnd/img/paper.jpg
+INPUT ../../templates/template_dnd/img/paper.jpg
+INPUT ../../templates/template_dnd/img/paper.jpg
+INPUT ../../templates/template_dnd/img/footerscroll.pdf
+INPUT ../../templates/template_dnd/img/footerscroll.pdf
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/bookman/pbklc8t.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/vf/adobe/bookman/pbklc8t.vf
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/bookman/pbkl8r.tfm
@@ -515,11 +520,6 @@ INPUT c:/texlive/2025/texmf-dist/fonts/vf/adobe/bookman/pbkli8t.vf
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/bookman/pbkli8r.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/bookman/pbkli8t.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/vf/adobe/bookman/pbkli8t.vf
-INPUT ../../templates/template_dnd/img/paper.jpg
-INPUT ../../templates/template_dnd/img/paper.jpg
-INPUT ../../templates/template_dnd/img/paper.jpg
-INPUT ../../templates/template_dnd/img/footerscroll.pdf
-INPUT ../../templates/template_dnd/img/footerscroll.pdf
 INPUT ../../templates/template_dnd/img/paper.jpg
 INPUT ../../templates/template_dnd/img/paper.jpg
 INPUT ../../templates/template_dnd/img/paper.jpg
